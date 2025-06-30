@@ -82,9 +82,6 @@ export const Hero = () => {
             <div className="bg-cream-100/10 backdrop-blur-sm rounded-full px-6 py-3 border border-cream-300/20">
               <span className="text-cream-100 text-sm">☕ Premium Coffee Experience</span>
             </div>
-            <div className="bg-cream-100/10 backdrop-blur-sm rounded-full px-6 py-3 border border-cream-300/20">
-              <span className="text-cream-100 text-sm">🥐 Fresh Pastries Daily</span>
-            </div>
           </motion.div>
         </motion.div>
       </div>
