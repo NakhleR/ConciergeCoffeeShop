@@ -1,141 +1,391 @@
 import { Hero } from '../components/Hero';
 import { MenuSection } from '../components/MenuSection';
 
-// Menu data - in a real app, this would come from an API
+// Menu data from Concierge Coffee Shop
 const menuData = {
-    coffee: [
+    hotCoffee: [
         {
             id: '1',
-            name: 'Signature Espresso',
-            description: 'Rich, full-bodied espresso shot made from our house blend of Ethiopian and Colombian beans',
-            price: '$3.50',
-            isSignature: true
+            name: 'Espresso',
+            description: 'Rich, concentrated coffee shot',
+            price: '225,000 LBP'
         },
         {
             id: '2',
-            name: 'Cappuccino',
-            description: 'Classic cappuccino with velvety steamed milk and a perfect foam layer',
-            price: '$4.50'
+            name: 'Double Espresso',
+            description: 'Double shot of our premium espresso',
+            price: '290,000 LBP'
         },
         {
             id: '3',
-            name: 'Flat White',
-            description: 'Double shot espresso with microfoam milk, Australian style',
-            price: '$5.00'
+            name: 'Long Black',
+            description: 'Espresso with hot water, preserving the crema',
+            price: '300,000 LBP'
         },
         {
             id: '4',
-            name: 'Cold Brew',
-            description: 'Smooth, low-acid coffee brewed cold for 12 hours, served over ice',
-            price: '$4.00'
+            name: 'Cortado',
+            description: 'Equal parts espresso and warm steamed milk',
+            price: '330,000 LBP'
         },
         {
             id: '5',
-            name: 'Beirut Blend',
-            description: 'Our special Middle Eastern inspired coffee with cardamom and rose water hints',
-            price: '$5.50',
-            isSignature: true
+            name: 'Macchiato',
+            description: 'Espresso "marked" with a dollop of foamed milk',
+            price: '300,000 LBP'
         },
         {
             id: '6',
-            name: 'Mocha',
-            description: 'Rich espresso with steamed milk and Belgian dark chocolate',
-            price: '$5.25'
-        }
-    ],
-    pastries: [
+            name: 'Cappuccino',
+            description: 'Espresso with steamed milk and thick foam layer',
+            price: '350,000 LBP'
+        },
         {
             id: '7',
-            name: 'Croissant',
-            description: 'Buttery, flaky French croissant baked fresh daily',
-            price: '$3.00'
+            name: 'Latte',
+            description: 'Espresso with steamed milk and light foam',
+            price: '360,000 LBP'
         },
         {
             id: '8',
-            name: 'Pain au Chocolat',
-            description: 'Classic French pastry with rich dark chocolate filling',
-            price: '$3.50'
+            name: 'Flat White',
+            description: 'Double shot espresso with microfoam milk',
+            price: '360,000 LBP'
         },
         {
             id: '9',
-            name: 'Manakish Zaatar',
-            description: 'Traditional Lebanese flatbread topped with zaatar and olive oil',
-            price: '$4.00',
-            isSignature: true
+            name: 'Raw Hot Chocolate',
+            description: 'Rich, organic hot chocolate made from raw cacao',
+            price: '400,000 LBP'
         },
         {
             id: '10',
-            name: 'Baklava Cheesecake',
-            description: 'Fusion dessert combining New York cheesecake with Middle Eastern baklava',
-            price: '$6.50',
-            isSignature: true
+            name: 'Mocha',
+            description: 'Espresso with steamed milk and chocolate',
+            price: '400,000 LBP'
         },
         {
             id: '11',
-            name: 'Almond Croissant',
-            description: 'Croissant filled with almond cream and topped with sliced almonds',
-            price: '$4.00'
+            name: 'White Mocha',
+            description: 'Espresso with steamed milk and white chocolate',
+            price: '400,000 LBP'
         },
         {
             id: '12',
-            name: 'Lebanese Ma\'amoul',
-            description: 'Traditional shortbread cookies filled with dates or pistachios',
-            price: '$2.50'
-        }
-    ],
-    specialty: [
+            name: 'Caramel Macchiato',
+            description: 'Vanilla latte with caramel drizzle',
+            price: '400,000 LBP'
+        },
         {
             id: '13',
-            name: 'Iced Cardamom Latte',
-            description: 'Refreshing iced latte infused with aromatic cardamom spice',
-            price: '$5.75',
-            isSignature: true
+            name: 'Spanish Latte',
+            description: 'Latte with condensed milk and cinnamon',
+            price: '390,000 LBP'
         },
         {
             id: '14',
-            name: 'Rose Water Macchiato',
-            description: 'Elegant macchiato with a hint of rose water and pistachios',
-            price: '$6.00',
-            isSignature: true
-        },
+            name: 'Matcha Vanilla',
+            description: 'Premium matcha with vanilla and steamed milk',
+            price: '410,000 LBP'
+        }
+    ],
+    coldDrinks: [
         {
             id: '15',
-            name: 'Sahlab Latte',
-            description: 'Traditional Middle Eastern drink reimagined as a warm, creamy latte',
-            price: '$5.50'
+            name: 'Iced Latte',
+            description: 'Chilled espresso with cold milk over ice',
+            price: '390,000 LBP'
         },
         {
             id: '16',
-            name: 'Turkish Coffee',
-            description: 'Authentic Turkish coffee served with Turkish delight',
-            price: '$4.50'
-        }
-    ],
-    breakfast: [
+            name: 'Iced Spanish Latte',
+            description: 'Cold version of our Spanish latte',
+            price: '430,000 LBP'
+        },
         {
             id: '17',
-            name: 'Avocado Toast',
-            description: 'Sourdough toast topped with smashed avocado, cherry tomatoes, and feta',
-            price: '$8.50'
+            name: 'Iced Caramel Macchiato',
+            description: 'Cold caramel macchiato over ice',
+            price: '400,000 LBP'
         },
         {
             id: '18',
-            name: 'Lebanese Breakfast Plate',
-            description: 'Hummus, labneh, olives, tomatoes, cucumbers, and fresh bread',
-            price: '$12.00',
-            isSignature: true
+            name: 'Double Shot Ice Shaken',
+            description: 'Shaken espresso over ice for maximum flavor',
+            price: '420,000 LBP'
         },
         {
             id: '19',
-            name: 'Shakshuka',
-            description: 'Poached eggs in spiced tomato sauce, served with fresh bread',
-            price: '$11.00'
+            name: 'Cold Brew',
+            description: 'Smooth, cold-brewed coffee served over ice',
+            price: '420,000 LBP'
         },
         {
             id: '20',
-            name: 'Granola Bowl',
-            description: 'House-made granola with Greek yogurt, fresh berries, and honey',
-            price: '$9.00'
+            name: 'Affogato',
+            description: 'Vanilla ice cream "drowned" in hot espresso',
+            price: '400,000 LBP'
+        },
+        {
+            id: '21',
+            name: 'Mixed Berries Smoothie',
+            description: 'Blend of fresh mixed berries and yogurt',
+            price: '410,000 LBP'
+        },
+        {
+            id: '22',
+            name: 'Mango-Passionfruit',
+            description: 'Tropical smoothie with mango and passionfruit',
+            price: '480,000 LBP'
+        },
+        {
+            id: '23',
+            name: 'Strawberry Smoothie',
+            description: 'Fresh strawberry smoothie with yogurt',
+            price: '410,000 LBP'
+        },
+        {
+            id: '24',
+            name: 'Ice Tea (Peach/Raspberry)',
+            description: 'Refreshing iced tea in peach or raspberry flavor',
+            price: '280,000 LBP'
+        },
+        {
+            id: '25',
+            name: 'Fizzy Ice Tea',
+            description: 'Sparkling iced tea for extra refreshment',
+            price: '320,000 LBP'
+        },
+        {
+            id: '26',
+            name: 'Iced Matcha Vanilla',
+            description: 'Chilled matcha latte with vanilla',
+            price: '410,000 LBP'
+        }
+    ],
+    filteredCoffee: [
+        {
+            id: '27',
+            name: 'V60 Ethiopian',
+            description: 'Single origin Ethiopian beans, pour-over method',
+            price: '360,000 LBP'
+        },
+        {
+            id: '28',
+            name: 'V60 Colombian',
+            description: 'Colombian single origin, V60 pour-over',
+            price: '360,000 LBP'
+        },
+        {
+            id: '29',
+            name: 'V60 Uganda',
+            description: 'Ugandan single origin coffee',
+            price: '360,000 LBP'
+        },
+        {
+            id: '30',
+            name: 'V60 Organic',
+            description: 'Certified organic coffee beans',
+            price: '400,000 LBP'
+        },
+        {
+            id: '31',
+            name: 'V60 Tanzanian',
+            description: 'Tanzanian single origin pour-over',
+            price: '360,000 LBP'
+        },
+        {
+            id: '32',
+            name: 'V60 Sumatra',
+            description: 'Indonesian Sumatra beans',
+            price: '360,000 LBP'
+        },
+        {
+            id: '33',
+            name: 'V60 Decaf',
+            description: 'Decaffeinated coffee, full flavor',
+            price: '360,000 LBP'
+        }
+    ],
+    retailCoffee: [
+        {
+            id: '34',
+            name: 'Concierge Blend',
+            description: 'Our signature house blend, perfect for home brewing',
+            price: '850,000 LBP',
+            isSignature: true
+        },
+        {
+            id: '35',
+            name: 'Tanzanian Blend',
+            description: 'Premium Tanzanian coffee beans',
+            price: '850,000 LBP'
+        },
+        {
+            id: '36',
+            name: 'Ethiopian Blend',
+            description: 'Single origin Ethiopian coffee beans',
+            price: '850,000 LBP'
+        },
+        {
+            id: '37',
+            name: 'Colombian Blend',
+            description: 'Colombian coffee beans for home brewing',
+            price: '850,000 LBP'
+        },
+        {
+            id: '38',
+            name: 'Organic Blend',
+            description: 'Certified organic coffee beans',
+            price: '900,000 LBP'
+        },
+        {
+            id: '39',
+            name: 'Uganda Blend',
+            description: 'Ugandan single origin beans',
+            price: '850,000 LBP'
+        },
+        {
+            id: '40',
+            name: 'Sumatra Blend',
+            description: 'Indonesian Sumatra coffee beans',
+            price: '850,000 LBP'
+        }
+    ],
+    teaAndOthers: [
+        {
+            id: '41',
+            name: 'Black Tea',
+            description: 'Classic black tea blend',
+            price: '250,000 LBP'
+        },
+        {
+            id: '42',
+            name: 'Chamomile Tea',
+            description: 'Soothing chamomile herbal tea',
+            price: '250,000 LBP'
+        },
+        {
+            id: '43',
+            name: 'Fresh Ginger Tea',
+            description: 'Warming fresh ginger tea',
+            price: '250,000 LBP'
+        },
+        {
+            id: '44',
+            name: 'Zhurat',
+            description: 'Traditional Lebanese herbal tea blend',
+            price: '250,000 LBP'
+        },
+        {
+            id: '45',
+            name: 'Green Tea',
+            description: 'Premium green tea',
+            price: '250,000 LBP'
+        },
+        {
+            id: '46',
+            name: 'Matte',
+            description: 'South American yerba mate',
+            price: '350,000 LBP'
+        }
+    ],
+    refreshments: [
+        {
+            id: '47',
+            name: 'Orange Juice',
+            description: 'Fresh squeezed orange juice',
+            price: '300,000 LBP'
+        },
+        {
+            id: '48',
+            name: 'Lemonade',
+            description: 'Fresh lemonade',
+            price: '300,000 LBP'
+        },
+        {
+            id: '49',
+            name: 'Water',
+            description: 'Still water',
+            price: '50,000 LBP'
+        },
+        {
+            id: '50',
+            name: 'Sparkling Water',
+            description: 'Sparkling mineral water',
+            price: '140,000 LBP'
+        }
+    ],
+    addOns: [
+        {
+            id: '51',
+            name: 'Shot Espresso',
+            description: 'Add an extra shot to any drink',
+            price: '90,000 LBP'
+        },
+        {
+            id: '52',
+            name: 'Syrups',
+            description: 'Vanilla, caramel, hazelnut, or other flavors',
+            price: '70,000 LBP'
+        },
+        {
+            id: '53',
+            name: 'Sauce',
+            description: 'Chocolate or caramel sauce',
+            price: '70,000 LBP'
+        },
+        {
+            id: '54',
+            name: 'Honey',
+            description: 'Natural honey sweetener',
+            price: '70,000 LBP'
+        },
+        {
+            id: '55',
+            name: 'Condensed Milk',
+            description: 'Sweet condensed milk',
+            price: '70,000 LBP'
+        }
+    ],
+    dessert: [
+        {
+            id: '56',
+            name: 'Cookies',
+            description: 'Freshly baked cookies',
+            price: '240,000 LBP'
+        },
+        {
+            id: '57',
+            name: 'Brownies',
+            description: 'Rich chocolate brownies',
+            price: '300,000 LBP'
+        },
+        {
+            id: '58',
+            name: 'Chocolate Bar',
+            description: 'Premium chocolate bar',
+            price: '220,000 LBP'
+        }
+    ],
+    alcohol: [
+        {
+            id: '59',
+            name: 'Beer',
+            description: 'Local or imported beer',
+            price: '250,000 LBP'
+        },
+        {
+            id: '60',
+            name: 'Red Wine',
+            description: 'Selection of red wines',
+            price: '360,000 LBP'
+        },
+        {
+            id: '61',
+            name: 'Rosé Wine',
+            description: 'Refreshing rosé wine',
+            price: '360,000 LBP'
         }
     ]
 };
@@ -147,36 +397,71 @@ export const MenuPage = () => {
 
             <main className="container mx-auto px-6 py-16">
                 <MenuSection
-                    title="Coffee & Espresso"
-                    items={menuData.coffee}
-                    category="Coffee"
+                    title="Hot Coffee"
+                    items={menuData.hotCoffee}
+                    category="Hot Coffee"
                     icon="☕"
                 />
 
                 <MenuSection
-                    title="Specialty Drinks"
-                    items={menuData.specialty}
-                    category="Specialty"
-                    icon="✨"
+                    title="Cold Drinks"
+                    items={menuData.coldDrinks}
+                    category="Cold Drinks"
+                    icon="🧊"
                 />
 
                 <MenuSection
-                    title="Fresh Pastries"
-                    items={menuData.pastries}
-                    category="Pastry"
-                    icon="🥐"
+                    title="Filtered Coffee"
+                    items={menuData.filteredCoffee}
+                    category="Filtered Coffee"
+                    icon="⚗️"
                 />
 
                 <MenuSection
-                    title="All Day Breakfast"
-                    items={menuData.breakfast}
-                    category="Breakfast"
-                    icon="🍳"
+                    title="Tea Selection"
+                    items={menuData.teaAndOthers}
+                    category="Tea & Others"
+                    icon="🍵"
+                />
+
+                <MenuSection
+                    title="Refreshments"
+                    items={menuData.refreshments}
+                    category="Refreshments"
+                    icon="🥤"
+                />
+
+                <MenuSection
+                    title="Retail Coffee"
+                    items={menuData.retailCoffee}
+                    category="Retail Coffee"
+                    icon="📦"
+                />
+
+                <MenuSection
+                    title="Add-ons"
+                    items={menuData.addOns}
+                    category="Add-ons"
+                    icon="➕"
+                />
+
+                <MenuSection
+                    title="Dessert"
+                    items={menuData.dessert}
+                    category="Dessert"
+                    icon="🍪"
+                />
+
+                <MenuSection
+                    title="Alcohol"
+                    items={menuData.alcohol}
+                    category="Alcohol"
+                    icon="🍷"
                 />
             </main>
 
             {/* Footer */}
-            <footer className="bg-brown-900 text-cream-100 py-12">
+            <footer className="bg-brown-900 text-cream-100 py-12 w-full">
                 <div className="container mx-auto px-6 text-center">
                     <h3 className="font-accent text-2xl font-bold mb-4">Visit Us</h3>
                     <p className="text-cream-300 mb-2">Badaro, Beirut, Lebanon</p>

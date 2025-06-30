@@ -2,17 +2,17 @@ import { motion } from 'framer-motion';
 
 export const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-brown-900 via-brown-800 to-brown-700 text-white py-20 overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat'
-          }}
-        ></div>
-      </div>
+    <section className="relative text-white py-20 overflow-hidden w-full">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: 'url("https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop")'
+        }}
+      ></div>
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/60"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -21,14 +21,39 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <motion.h1
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-accent text-5xl md:text-7xl font-bold mb-4"
+            className="flex flex-col items-center mb-4"
           >
-            Concierge
-          </motion.h1>
+            {/* Logo Icon */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="mb-6"
+            >
+              <img
+                src="/assets/icons/Concierge _ Logo _ Icon.svg"
+                alt="Concierge Coffee Shop Logo"
+                className="w-20 h-20 md:w-24 md:h-24 filter invert"
+              />
+            </motion.div>
+
+            {/* Logo Logotype */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <img
+                src="/assets/icons/Concierge _ Logo _ Logotype.svg"
+                alt="Concierge"
+                className="h-12 md:h-16 filter invert"
+              />
+            </motion.div>
+          </motion.div>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
