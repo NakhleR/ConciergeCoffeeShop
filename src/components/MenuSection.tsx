@@ -57,9 +57,6 @@ export const MenuSection = ({ title, items, category, icon, subtitle }: MenuSect
                             <div className="flex justify-between items-start mb-3">
                                 <h3 className="font-avenir font-bold text-lg text-black flex items-center gap-2">
                                     {item.name}
-                                    {item.isSignature && (
-                                        <span className="text-black text-sm">★</span>
-                                    )}
                                 </h3>
                                 <span className="font-avenir font-bold text-lg text-black ml-4 flex-shrink-0">
                                     {item.price}
