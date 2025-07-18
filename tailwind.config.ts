@@ -7,50 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: "#fefdf6",
-          100: "#fdfbea",
-          200: "#faf5c9",
-          300: "#f6eda8",
-          400: "#f0dc66",
-          500: "#eacb24",
-          600: "#d3b720",
-          700: "#b09a1b",
-          800: "#8c7c16",
-          900: "#726412",
-          950: "#47400a"
-        },
-        brown: {
-          50: "#faf8f5",
-          100: "#f5f0ea",
-          200: "#e8ddd0",
-          300: "#dbc6b0",
-          400: "#c8a888",
-          500: "#b98f68",
-          600: "#a67c5a",
-          700: "#8a654c",
-          800: "#715442",
-          900: "#5c4637",
-          950: "#30241c"
-        },
-        cream: {
-          50: "#fefefe",
-          100: "#fdfdfd",
-          200: "#fafafa",
-          300: "#f7f6f4",
-          400: "#f2efea",
-          500: "#ede8e0",
-          600: "#d5d0c8",
-          700: "#b3aea6",
-          800: "#918c84",
-          900: "#77726c",
-          950: "#3e3b37"
-        }
+        black: "#000000",
+        white: "#fff9e7",
+        cream: "#fff5d9"
       },
       fontFamily: {
-        'heading': ['Inter', 'sans-serif'],
-        'body': ['Inter', 'sans-serif'],
-        'accent': ['Playfair Display', 'serif']
+        'heading': ['PPHatton', 'Inter', 'sans-serif'],
+        'body': ['PPHatton', 'Inter', 'sans-serif'],
+        'accent': ['PPHatton', 'Playfair Display', 'serif'],
+        'pphatton': ['PPHatton', 'sans-serif'],
+        'avenir': ['Avenir', 'Avenir Next', 'Helvetica Neue', 'sans-serif']
       },
       borderRadius: {
         'card': '12px',

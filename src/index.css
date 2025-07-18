@@ -1,4 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* PPHatton Font Faces */
+@font-face {
+  font-family: 'PPHatton';
+  src: url('/assets/fonts/PPHatton-Ultralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPHatton';
+  src: url('/assets/fonts/PPHatton-UltralightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PPHatton';
+  src: url('/assets/fonts/PPHatton-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPHatton';
+  src: url('/assets/fonts/PPHatton-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'PPHatton';
+  src: url('/assets/fonts/PPHatton-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPHatton';
+  src: url('/assets/fonts/PPHatton-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,7 +83,7 @@ body {
   }
 
   body {
-    @apply font-body text-brown-900 bg-cream-50;
+    @apply font-avenir text-black bg-cream;
   }
 }
 
